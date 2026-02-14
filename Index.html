@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Valentine Surprise ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            padding-top: 100px;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 45px;
+            color: white;
+        }
+
+        p {
+            font-size: 22px;
+            color: white;
+        }
+
+        button {
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+            position: absolute;
+        }
+
+        .yes-btn {
+            background-color: white;
+            color: #ff4d6d;
+            position: relative;
+        }
+
+        .no-btn {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #result {
+            margin-top: 40px;
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will You Be My Valentine? 💖</h1>
+
+    <button class="yes-btn" onclick="sayYes()">YES 💕</button>
+    <button class="no-btn" id="noBtn">NO 😈</button>
+
+    <p id="result"></p>
+
+    <script>
+        const noBtn = document.getElementById("noBtn");
+
+        noBtn.addEventListener("mouseover", moveButton);
+        noBtn.addEventListener("click", moveButton);
+        noBtn.addEventListener("touchstart", moveButton);
+
+        function moveButton() {
+            const x = Math.floor(Math.random() * window.innerWidth);
+            const y = Math.floor(Math.random() * window.innerHeight);
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        }
+
+        function sayYes() {
+            document.getElementById("result").innerHTML = "I Love You ❤️";
+        }
+    </script>
+
+</body>
+</html>
